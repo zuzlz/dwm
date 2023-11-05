@@ -3,7 +3,7 @@
 #include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
@@ -13,10 +13,10 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {  "SauceCodePro Nerd Font:pixelsize=13:antialias=true:autohint=true"};
-static const char dmenufont[]       = "SauceCodePro Nerd Font:pixelsize=13:antialias=true:autohint=true";
+static const char dmenufont[]       = "SauceCodePro Nerd Font:pixelsize=15:antialias=true:autohint=true";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray3[]       = "#A08563";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
@@ -102,9 +102,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask|ShiftMask,             XK_r,      quit,           {0} },
-	{ 0,                            XF86XK_AudioNext,          spawn,          SHCMD("mpc next") },
-	{ 0,                            XF86XK_AudioPlay,          spawn,          SHCMD("mpc toggle") },
-	{ 0,                            XF86XK_AudioPrev,          spawn,          SHCMD("mpc prev") },
+	{ 0,                            XF86XK_AudioNext,          spawn,          SHCMD("playerctl next") },
+	{ 0,                            XF86XK_AudioPlay,          spawn,          SHCMD("playerctl play-pause") },
+	{ 0,                            XF86XK_AudioPrev,          spawn,          SHCMD("playerctl prev") },
 	{ 0,                            XF86XK_AudioMute,          spawn,          SHCMD("$HOME/.local/scripts/dunst-volume.sh toggle") },
 	{ 0,                            XF86XK_AudioLowerVolume,   spawn,          SHCMD("$HOME/.local/scripts/dunst-volume.sh -5%") },
 	{ 0,                            XF86XK_AudioRaiseVolume,   spawn,          SHCMD("$HOME/.local/scripts/dunst-volume.sh +5%") },
